@@ -1,0 +1,11 @@
+select {
+  width: 100%;
+}
+
+body {
+  background-image: linear-gradient(120deg, #b8fff7, #80f0ff);
+}
+
+.tabela {
+  margin-top: 3.3rem;
+}

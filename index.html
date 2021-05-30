@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Trabalho final</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <h1>Itens de pedido</h1>
+
+          <!-- Formulário para inserção de conteúdo -->
+          <form>
+            <div class="mt-3 mb-3">
+              <label class="col-form-label">Nome do produto</label>
+              <input id="nome" type="text" class="form-control" required />
+            </div>
+            <div class="mt-3 mb-3">
+              <label class="form-label">Quantidade</label>
+              <input
+                id="quantidade"
+                min="1"
+                type="number"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="mt-3 mb-3">
+              <label class="form-label">Valor</label>
+              <input
+                id="valor"
+                min="1"
+                type="number"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="mt-3 mb-3">
+              <label class="form-label">Categoria</label>
+              <!-- Campo para seleção de produto -->
+              <select id="categoria" class="form-select mt-3">
+                <option selected value="1">Selecione</option>
+                <option value="Livros">Livros</option>
+                <option value="DVDs">DVDs</option>
+                <option value="Papelaria">Papelaria</option>
+              </select>
+            </div>
+
+            <div class="div-alert">
+              <p class="alert alert-success d-none">
+                Produto incluído com sucesso!
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3 w-100">
+              Salvar
+            </button>
+          </form>
+          <button
+            id="btnLimpar"
+            type="submit"
+            class="btn btn-danger mt-3 mb-3 w-100"
+          >
+            Remover todos os itens
+          </button>
+        </div>
+        <!-- Tabela para exibição dos conteúdos inseridos -->
+
+        <div class="tabela col-lg-6 col-md-12">
+          <select
+            id="filterCategoria"
+            class="form-select mt-3"
+            class="form-control"
+            onchange="filtraCategoria()"
+          >
+            <option selected value="">Selecione</option>
+            <option value="Livros">Livros</option>
+            <option value="DVDs">DVDs</option>
+            <option value="Papelaria">Papelaria</option>
+          </select>
+          <table
+            id="table-pedido"
+            class="table table-hover table-striped table-light mt-3"
+          >
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Total</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
